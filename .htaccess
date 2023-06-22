@@ -1,4 +1,5 @@
-Options -MultiViews
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
+RewriteEngine on
+RewriteRule ^api$ public/ [L]
+RewriteRule (api(?s).) public/$1 [L]
+RewriteRule ^$ react/dist/ [L]
+RewriteRule ((?s).) react/dist/$1 [L]
